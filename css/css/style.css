@@ -1,0 +1,429 @@
+/* --- KONFIGURASI DASAR & VARIABEL --- */
+:root {
+  --primary: #ffffff;
+  --bg: #00034d;
+  --bgg: #292ab3;
+  --yellow: #fed91c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--bg);
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(0, 3, 77, 0.95);
+  border-bottom: 1px solid var(--bgg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease;
+}
+
+.navbar .navbar-logo img {
+  width: 40px;
+  height: auto;
+}
+
+.navbar .navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar .navbar-nav a {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+  transition: 0.3s;
+  position: relative;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--yellow);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+}
+
+.navbar .navbar-nav a:hover::after {
+  width: 100%;
+}
+
+.navbar .navbar-extra {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar .navbar-extra a {
+  color: #ffffff !important;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--yellow) !important;
+}
+
+#menuu {
+  display: none;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("../img/header-bg.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 0 7%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, var(--bg) 15%, transparent);
+  z-index: 1;
+}
+
+.hero .content {
+  z-index: 2;
+}
+
+.hero .content h1 {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.hero .content h1 span {
+  color: var(--yellow);
+  font-style: italic;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero .hero-desc {
+  font-size: 1.7rem; /* Ubah dari 1.6rem ke 1.1rem */
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero .cta-group p {
+  font-size: 1.2rem  /* Paksa jadi kecil */
+  color: #ffffff;
+  margin-top: 10px;
+}
+.cta-group {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.cta-button {
+  padding: 1.2rem 3.5rem;
+  background-color: var(--yellow);
+  color: var(--bg);
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(254, 217, 28, 0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  background-color: #ffffff;
+  box-shadow: 0 15px 30px rgba(254, 217, 28, 0.4);
+}
+
+/* Tambahkan ini supaya teks 'atau' kecilnya sama dengan 'Masuk' */
+.cta-group p {
+  font-size: 1rem; /* Samakan nilainya dengan .login-link */
+  margin: 0; /* Biar gak ada jarak tambahan yang bikin berantakan */
+  color: #ffffff;
+}
+
+.login-link {
+  color: var(--yellow);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.login-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* --- ABOUT & BENEFIT CARDS --- */
+.about {
+  padding: 100px 7%;
+}
+
+.glass-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 60px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-left {
+  flex: 1;
+}
+
+.info-left h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.cards-right {
+  flex: 1.8;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  align-items: stretch; /* Memastikan semua kartu sama tinggi */
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 25px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.4s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-15px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--yellow);
+  box-shadow: 0 20px 40px rgba(254, 217, 28, 0.1);
+}
+
+.benefit-card h3 {
+  color: var(--yellow);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.benefit-icon {
+  width: 70px;
+  height: auto;
+  margin: 15px 0;
+  filter: drop-shadow(0 0 10px rgba(254, 217, 28, 0.3));
+}
+
+.benefit-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- PARALLAX SECTION --- */
+.parallax-section {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/header-bg.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 3, 77, 0.7);
+}
+
+.animated-text {
+  position: relative;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  animation: colorChange 2s infinite alternate ease-in-out;
+}
+
+@keyframes colorChange {
+  from {
+    color: var(--yellow);
+    text-shadow: 0 0 20px rgba(254, 217, 28, 0.5);
+  }
+  to {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* --- STATS SECTION (WHITE BACKGROUND) --- */
+.stats-white {
+  padding: 120px 7%;
+  background-color: #ffffff;
+}
+
+.stats-box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: #ffffff;
+  border-radius: 40px;
+  box-shadow: 0 30px 60px rgba(0, 3, 77, 0.1);
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.stat-item h2 {
+  font-size: 3.8rem;
+  color: var(--bgg);
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.stat-item p {
+  color: #555555;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+  padding: 70px 7%;
+  background: #ffffff;
+  border-top: 1px solid #eeeeee;
+  text-align: center;
+}
+
+.footer-content p {
+  color: #555555;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+#ig-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--yellow);
+  font-weight: 700;
+  padding: 15px 30px;
+  border-radius: 50px;
+  background: var(--bgg);
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#ig-footer:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(41, 42, 179, 0.3);
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 991px) {
+  .hero .content h1 {
+    font-size: 3rem;
+  }
+  .glass-container {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .info-left {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--bg);
+    width: 250px;
+    height: 100vh;
+    flex-direction: column;
+    padding: 2rem;
+    transition: 0.4s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  #menuu {
+    display: block;
+  }
+}
