@@ -164,6 +164,7 @@ body {
   color: #ffffff;
   margin-top: 10px;
 }
+
 .cta-group {
   margin-top: 2.5rem;
   display: flex;
@@ -426,4 +427,193 @@ body {
   #menuu {
     display: block;
   }
+}
+/* ========================= */
+/* LOWONGAN PEKERJAAN */
+/* ========================= */
+
+.jobs-section {
+  min-height: 100vh;
+  padding: 8rem 7%;
+  background: #0f172a;
+  color: white;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+.job-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.job-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.job-card:hover {
+  transform: translateY(-10px);
+}
+
+.job-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.job-top h3 {
+  font-size: 1.3rem;
+}
+
+.job-badge {
+  background: #2563eb;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.company {
+  color: #60a5fa;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.job-desc {
+  color: #e2e8f0;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.apply-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background: #1d4ed8;
+}
+
+
+
+/* ========================= */
+/* PELATIHAN */
+/* ========================= */
+
+.training-section {
+  min-height: 100vh;
+  padding: 8rem 7%;
+  background: #111827;
+  color: white;
+}
+
+.training-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.training-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.training-card:hover {
+  transform: scale(1.03);
+}
+
+.training-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.training-card p {
+  color: #e2e8f0;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.training-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.training-btn:hover {
+  background: #1d4ed8;
+}
+
+
+
+/* ========================= */
+/* USER LOGIN */
+/* ========================= */
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout-btn {
+  border: none;
+  background: #ef4444;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
 }
