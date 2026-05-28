@@ -54,4 +54,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animate(); // Jalankan fungsi animasi
   });
+  feather.replace();
+
+const userData = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (userData) {
+
+  const userIcon = document.getElementById("user");
+
+  userIcon.innerHTML = `
+    <span style="color:white; font-size:14px;">
+      ${userData.name}
+    </span>
+  `;
+}
 });
