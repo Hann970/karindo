@@ -68,4 +68,27 @@ if (userData) {
     </span>
   `;
 }
+const detailBtns = document.querySelectorAll(".detail-btn");
+
+detailBtns.forEach(btn => {
+
+  btn.addEventListener("click", () => {
+
+    const userData = JSON.parse(
+      localStorage.getItem("loggedInUser")
+    );
+
+    if (!userData) {
+
+      alert("Silakan login terlebih dahulu!");
+
+      window.location.href = "login.html";
+
+      return;
+    }
+
+    alert("Berhasil membuka detail lowongan!");
+  });
+
+});
 });
