@@ -25,11 +25,14 @@
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <input type="text" placeholder="Posisi, skill, atau perusahaan...">
         </div>
-        <select class="search-select location-select">
-          <option>Jakarta</option>
-          <option>Bandung</option>
-          <option>Surabaya</option>
+        
+        <select id="filter-kota" class="search-select location-select">
+          <option value="Semua">Semua Kota</option>
+          <option value="Jakarta">Jakarta</option>
+          <option value="Bandung">Bandung</option>
+          <option value="Surabaya">Surabaya</option>
         </select>
+        
         <select class="search-select">
           <option>Semua Tipe</option>
           <option>Full-time</option>
@@ -48,9 +51,9 @@
 
     <div class="main-content-layout">
       
-      <section class="job-list-sidebar">
+      <section class="job-list-sidebar" id="job-list">
         
-        <div class="modern-job-card active">
+        <div class="modern-job-card active" data-city="Jakarta" data-id="1">
           <div class="modern-job-header">
             <div class="job-icon-bg blue-bg">
               <i class="fa-solid fa-laptop-code"></i>
@@ -71,7 +74,7 @@
           </div>
         </div>
 
-        <div class="modern-job-card">
+        <div class="modern-job-card" data-city="Jakarta" data-id="2">
           <div class="modern-job-header">
             <div class="job-icon-bg green-bg">
               <i class="fa-solid fa-chart-simple"></i>
@@ -92,20 +95,62 @@
           </div>
         </div>
 
+        <div class="modern-job-card" data-city="Bandung" data-id="3">
+          <div class="modern-job-header">
+            <div class="job-icon-bg blue-bg">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <div class="job-meta">
+              <h3>UI/UX Designer</h3>
+              <p class="company-info">Kreasi Studio · Bandung</p>
+            </div>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Remote</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Prototyping</span>
+          </div>
+          <div class="job-card-footer">
+            <span class="salary">Rp 10–16 jt/bln</span>
+            <span class="posted-time">1 hari lalu</span>
+          </div>
+        </div>
+
+        <div class="modern-job-card" data-city="Surabaya" data-id="4">
+          <div class="modern-job-header">
+            <div class="job-icon-bg green-bg">
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="job-meta">
+              <h3>Digital Marketing Manager</h3>
+              <p class="company-info">Brand Kreatif · Surabaya</p>
+            </div>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Full-time</span>
+            <span class="tag">SEO/SEM</span>
+            <span class="tag">Social Media</span>
+          </div>
+          <div class="job-card-footer">
+            <span class="salary">Rp 12–21 jt/bln</span>
+            <span class="posted-time">4 hari lalu</span>
+          </div>
+        </div>
+
       </section>
 
-      <aside class="job-detail-panel">
+      <aside class="job-detail-panel" id="job-detail">
         <div class="detail-header">
-          <div class="detail-icon-bg">
+          <div class="detail-icon-bg" id="detail-icon">
             <i class="fa-solid fa-laptop-code"></i>
           </div>
-          <h2 class="detail-title">Senior Full Stack Developer</h2>
-          <p class="detail-company">PT. Inovasi Digital</p>
+          <h2 class="detail-title" id="detail-title">Senior Full Stack Developer</h2>
+          <p class="detail-company" id="detail-company">PT. Inovasi Digital</p>
           
           <div class="detail-meta-info">
-            <span><i class="fa-solid fa-location-dot"></i> Jakarta Selatan</span>
-            <span><i class="fa-solid fa-briefcase"></i> Hybrid</span>
-            <span><i class="fa-solid fa-users"></i> 47 pelamar</span>
+            <span id="detail-location"><i class="fa-solid fa-location-dot"></i> Jakarta Selatan</span>
+            <span id="detail-type"><i class="fa-solid fa-briefcase"></i> Hybrid</span>
+            <span id="detail-applicants"><i class="fa-solid fa-users"></i> 47 pelamar</span>
           </div>
         </div>
 
@@ -115,7 +160,7 @@
         </div>
 
         <div class="detail-salary-box">
-          <p class="detail-salary-text">Rp 18–28 jt/bln</p>
+          <p class="detail-salary-text" id="detail-salary">Rp 18–28 jt/bln</p>
         </div>
       </aside>
 
@@ -123,6 +168,112 @@
 
   </main>
 
-  <script src="js/script.js"></script>
+  <script>
+    // 1. Data Dummy Mentah untuk Sinkronisasi Detail Panel Kanan
+    const jobsData = {
+      "1": {
+        title: "Senior Full Stack Developer",
+        company: "PT. Inovasi Digital",
+        location: "Jakarta Selatan",
+        type: "Hybrid",
+        applicants: "47 pelamar",
+        salary: "Rp 18–28 jt/bln",
+        icon: '<i class="fa-solid fa-laptop-code"></i>'
+      },
+      "2": {
+        title: "Data Scientist",
+        company: "DataTech Indonesia",
+        location: "Jakarta Pusat",
+        type: "Full-time",
+        applicants: "12 pelamar",
+        salary: "Rp 15–22 jt/bln",
+        icon: '<i class="fa-solid fa-chart-simple"></i>'
+      },
+      "3": {
+        title: "UI/UX Designer",
+        company: "Kreasi Studio",
+        location: "Bandung",
+        type: "Remote",
+        applicants: "29 pelamar",
+        salary: "Rp 10–16 jt/bln",
+        icon: '<i class="fa-solid fa-palette"></i>'
+      },
+      "4": {
+        title: "Digital Marketing Manager",
+        company: "Brand Kreatif",
+        location: "Surabaya",
+        type: "Full-time",
+        applicants: "8 pelamar",
+        salary: "Rp 12–21 jt/bln",
+        icon: '<i class="fa-solid fa-bullhorn"></i>'
+      }
+    };
+
+    // 2. DOM Elemen Selector
+    const cards = document.querySelectorAll('.modern-job-card');
+    const filterKota = document.getElementById('filter-kota');
+    
+    const detailIcon = document.getElementById('detail-icon');
+    const detailTitle = document.getElementById('detail-title');
+    const detailCompany = document.getElementById('detail-company');
+    const detailLocation = document.getElementById('detail-location');
+    const detailType = document.getElementById('detail-type');
+    const detailApplicants = document.getElementById('detail-applicants');
+    const detailSalary = document.getElementById('detail-salary');
+
+    // 3. Fungsi untuk Update Isi Detail Sebelah Kanan
+    function updateDetailPanel(id) {
+      const data = jobsData[id];
+      if (data) {
+        detailIcon.innerHTML = data.icon;
+        detailTitle.textContent = data.title;
+        detailCompany.textContent = data.company;
+        detailLocation.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${data.location}`;
+        detailType.innerHTML = `<i class="fa-solid fa-briefcase"></i> ${data.type}`;
+        detailApplicants.innerHTML = `<i class="fa-solid fa-users"></i> ${data.applicants}`;
+        detailSalary.textContent = data.salary;
+      }
+    }
+
+    // 4. Event Listener untuk Klik pada Setiap Kartu Loker
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Hapus class 'active' dari kartu sebelumnya
+        document.querySelector('.modern-job-card.active')?.classList.remove('active');
+        
+        // Tambah class 'active' ke kartu yang sedang diklik
+        card.classList.add('active');
+        
+        // Ambil ID data dan perbarui panel kanan
+        const jobId = card.getAttribute('data-id');
+        updateDetailPanel(jobId);
+      });
+    });
+
+    // 5. Event Listener untuk Pemilihan Kota (Dropdown Filter)
+    filterKota.addEventListener('change', (e) => {
+      const selectedCity = e.target.value;
+      let firstVisibleCard = null;
+
+      cards.forEach(card => {
+        const cardCity = card.getAttribute('data-city');
+        
+        // Jika pilih "Semua" atau kota cocok dengan data-city kartu
+        if (selectedCity === "Semua" || cardCity === selectedCity) {
+          card.style.display = "block"; // Tampilkan kartu
+          if (!firstVisibleCard) {
+            firstVisibleCard = card; // Ambil kartu pertama yang lolos filter
+          }
+        } else {
+          card.style.display = "none"; // Sembunyikan kartu
+        }
+      });
+
+      // Otomatis klik kartu pertama yang muncul hasil filter agar detail panel kanan langsung sinkron
+      if (firstVisibleCard) {
+        firstVisibleCard.click();
+      }
+    });
+  </script>
 </body>
 </html>

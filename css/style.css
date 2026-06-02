@@ -1382,3 +1382,18 @@ body.karindo-bg {
     align-items: stretch;
   }
 }
+/* Pastikan ini ada di file css/style.css Anda */
+.modern-job-card {
+  display: block; /* Mengatur default display agar transisi filter lancar */
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modern-job-card.active {
+  border: 2px solid #3b82f6;
+  background-color: #f0f7ff;
+}
