@@ -1070,23 +1070,3 @@ body {
     }
 
 }
-@media (max-width:768px){
-
-    .navbar-nav{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-        width:100%;
-        margin-top:15px;
-    }
-
-    .navbar-nav a{
-        text-align:center;
-        padding:10px;
-        border-radius:10px;
-        background:#f1f5f9;
-        color:#1e293b;
-        font-size:14px;
-    }
-
-}
