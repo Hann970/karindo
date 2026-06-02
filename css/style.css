@@ -785,85 +785,23 @@ body {
 
 }
 
-/* ================= BLOG WAWANCARA ================= */
+/* ================================= */
+/* BACKGROUND UNIVERSAL */
+/* ================================= */
 
-.blog-container{
-    max-width:1200px;
-    margin:auto;
-    padding:8rem 7%;
-}
-
-.blog-header{
-    text-align:center;
-    margin-bottom:4rem;
-}
-
-.blog-header h1{
-    font-size:3rem;
-    color:#0f172a;
-}
-
-.blog-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:2rem;
-}
-
-.article-card{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.article-card:hover{
-    transform:translateY(-10px);
-}
-
-.article-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.article-content{
-    padding:1.5rem;
-}
-
-.article-content h3{
-    margin-bottom:1rem;
-}
-
-.article-content p{
-    color:#64748b;
-    margin-bottom:1rem;
-}
-
-.article-btn{
-    border:none;
-    background:#2563eb;
-    color:white;
-    padding:12px 20px;
-    border-radius:10px;
-    cursor:pointer;
-}
 .karindo-bg{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-image: url("../img/header-bg.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  padding: 0 7%;
+    background:
+    linear-gradient(
+        135deg,
+        #eef4ff,
+        #f8f5ff
+    );
 }
-/* ========================= */
-/* CV BUILDER / ARTIKEL CV */
-/* ========================= */
+
+
+/* ================================= */
+/* CV - WAWANCARA - DETAIL PELATIHAN */
+/* ================================= */
 
 .cv-page{
     min-height:100vh;
@@ -896,14 +834,40 @@ body {
     margin:auto;
     color:#475569;
     line-height:1.8;
-    font-size:1.1rem;
+}
+
+.article-section{
+    background:white;
+    padding:3rem;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:3rem;
+}
+
+.article-section h2{
+    color:#2563eb;
+    margin-bottom:1rem;
+}
+
+.article-section p{
+    line-height:1.8;
+    color:#475569;
+}
+
+.article-section ul{
+    padding-left:20px;
+}
+
+.article-section li{
+    margin-bottom:10px;
+    color:#475569;
 }
 
 .cv-banner{
     background:white;
     padding:3rem;
     border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
     margin-bottom:3rem;
 }
 
@@ -913,13 +877,14 @@ body {
 }
 
 .cv-banner p{
-    color:#475569;
     line-height:1.8;
+    color:#475569;
 }
 
 .tips-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
     gap:2rem;
     margin-bottom:3rem;
 }
@@ -946,34 +911,6 @@ body {
     line-height:1.7;
 }
 
-.article-section{
-    background:white;
-    padding:3rem;
-    border-radius:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    margin-bottom:3rem;
-}
-
-.article-section h2{
-    color:#2563eb;
-    margin-bottom:1rem;
-}
-
-.article-section p{
-    color:#475569;
-    line-height:1.8;
-    margin-bottom:1rem;
-}
-
-.article-section ul{
-    padding-left:20px;
-}
-
-.article-section li{
-    margin-bottom:12px;
-    color:#475569;
-}
-
 .cv-example{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -991,43 +928,28 @@ body {
 
 .good-cv h3{
     color:#16a34a;
-    margin-bottom:1rem;
 }
 
 .bad-cv h3{
     color:#dc2626;
-    margin-bottom:1rem;
-}
-
-.good-cv ul,
-.bad-cv ul{
-    padding-left:20px;
-}
-
-.good-cv li,
-.bad-cv li{
-    margin-bottom:10px;
-    color:#475569;
 }
 
 .cv-cta{
     background:white;
     padding:4rem;
-    border-radius:25px;
     text-align:center;
+    border-radius:25px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .cv-cta h2{
     color:#facc15;
-    font-size:2.5rem;
     margin-bottom:1rem;
 }
 
 .cv-cta p{
-    color:#64748b;
     margin-bottom:2rem;
-    line-height:1.8;
+    color:#64748b;
 }
 
 .cta-btn{
@@ -1037,16 +959,70 @@ body {
     color:white;
     text-decoration:none;
     border-radius:12px;
-    font-weight:600;
-    transition:.3s;
 }
 
 .cta-btn:hover{
     background:#1d4ed8;
-    transform:translateY(-3px);
 }
 
+
+/* ================================= */
+/* PELATIHAN */
+/* ================================= */
+
+.training-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+}
+
+.training-card{
+    background:white;
+    padding:2rem;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.training-card:hover{
+    transform:translateY(-10px);
+}
+
+.training-card h3{
+    color:#2563eb;
+    margin-bottom:1rem;
+}
+
+.training-card p{
+    color:#64748b;
+    margin-bottom:1rem;
+}
+
+.training-info{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:1rem;
+}
+
+.training-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:12px;
+    border-radius:10px;
+}
+
+.training-btn:hover{
+    background:#1d4ed8;
+}
+
+
+/* ================================= */
 /* RESPONSIVE */
+/* ================================= */
 
 @media(max-width:768px){
 
@@ -1058,15 +1034,4 @@ body {
         grid-template-columns:1fr;
     }
 
-    .cv-banner,
-    .article-section,
-    .cv-cta{
-        padding:2rem;
-    }
-
-}
-.blog-header h1,
-.article-header h1,
-.yellow-title{
-    color:#facc15;
 }
