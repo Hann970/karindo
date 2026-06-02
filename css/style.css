@@ -919,19 +919,21 @@ body {
 }
 
 .good-cv,
-.bad-cv{
-    background:white;
-    padding:2rem;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+.good-cv *{
+    color:#334155;
+}
+
+.bad-cv,
+.bad-cv *{
+    color:#334155;
 }
 
 .good-cv h3{
-    color:#16a34a;
+    color:#16a34a !important;
 }
 
 .bad-cv h3{
-    color:#dc2626;
+    color:#dc2626 !important;
 }
 
 .cv-cta{
