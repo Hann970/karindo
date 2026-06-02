@@ -411,51 +411,40 @@ body {
     text-align: center;
     margin-bottom: 30px;
   }
-
-  /* Perbaikan tombol hamburger muncul di HP */
-  #menuu {
-    display: inline-block !important;
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 991px) {
+  .hero .content h1 {
+    font-size: 3rem;
   }
-
-  /* Perbaikan total Sidebar Navigasi (Pop Up dari Kanan Layar) */
+  .glass-container {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .info-left {
+    text-align: center;
+    margin-bottom: 30px;
+  }
   .navbar .navbar-nav {
-    position: fixed; /* Mengunci penuh di layar HP */
-    top: 0;
-    right: -100%; /* Bersembunyi di kanan luar layar sebelum diklik */
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--bg);
     width: 280px;
     height: 100vh;
-    background-color: #061238; /* Warna biru gelap pekat sesuai gambar */
     display: flex;
     flex-direction: column;
-    padding: 6rem 1.5rem 2rem 1.5rem; /* Jarak atas agar tidak tertutup ikon */
-    gap: 0;
-    transition: right 0.3s ease-in-out; /* Efek pop up meluncur halus */
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    gap: 1rem;
+    padding: 2rem;
+    transition: 0.4s;
   }
-
-  /* Pemicu dari JavaScript untuk memunculkan Navbar */
-  .navbar .navbar-nav.active {
-    right: 0 !important;
-  }
-
-  /* Pengaturan tautan menu di dalam sidebar mobile */
-  .navbar .navbar-nav a {
-    color: #ffffff !important;
-    display: block;
-    padding: 1.2rem 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: left;
-    width: 100%;
-    text-decoration: none;
-  }
-
-  /* Efek saat menu di dalam sidebar disentuh/di-hover */
   .navbar .navbar-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #ffdd00 !important; /* Warna kuning teks pop up */
+    background: rgba(255,255,255,0.1);
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  #menuu {
+    display: block;
   }
 }
 /* ========================= */
