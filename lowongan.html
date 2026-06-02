@@ -3,315 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Lowongan Pekerjaan</title>
-
+  <title>Karindo — Temukan Pekerjaan Impianmu</title>
   <link rel="stylesheet" href="css/style.css">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-  <body class="karindo-bg">
 
-  <section class="modern-jobs">
+  <header class="navbar">
+    <div class="navbar-left">
+      <div class="logo">
+        <span class="logo-icon">👤</span><strong>Karindo</strong>
+      </div>
+      <div class="search-bar-nav">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Cari pekerjaan, orang, perusahaan...">
+      </div>
+    </div>
+    <div class="navbar-right">
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> Beranda</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-briefcase"></i> Lowongan</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-users"></i> Jaringan</a>
+      </nav>
+      <div class="nav-icons">
+        <button class="icon-btn"><i class="fa-solid fa-bell"></i></button>
+        <button class="icon-btn"><i class="fa-solid fa-comment-dots"></i></button>
+        <div class="profile-avatar">DE</div>
+      </div>
+    </div>
+  </header>
 
-    <div class="jobs-heading">
+  <main class="main-content">
+    <section class="hero-section">
+      <h1>Temukan Pekerjaan Impianmu</h1>
+      <p>50.000+ lowongan dari perusahaan terpercaya di seluruh Indonesia</p>
+    </section>
 
-      <h1>
-        Lowongan
-        <span>Terpopuler</span>
-        Hari Ini
-      </h1>
+    <section class="filter-container">
+      <div class="filter-box">
+        <div class="input-with-icon">
+          <i class="fa fa-search text-muted"></i>
+          <input type="text" placeholder="Posisi, skill, atau perusahaan...">
+        </div>
+        
+        <select class="filter-select">
+          <option>Jakarta</option>
+        </select>
+        
+        <select class="filter-select">
+          <option>Semua Tipe</option>
+        </select>
+        
+        <select class="filter-select">
+          <option>Semua Kategori</option>
+        </select>
+        
+        <button class="btn-search">Cari</button>
+      </div>
+    </section>
 
-      <p>
-        Diperbarui setiap hari dari perusahaan terverifikasi
-      </p>
+    <div class="content-layout">
+      
+      <aside class="job-list-column">
+        
+        <div class="job-card active">
+          <div class="job-card-main">
+            <div class="company-logo-box text-blue">💻</div>
+            <div class="job-card-details">
+              <h3>Senior Full Stack Developer</h3>
+              <p class="company-name">PT. Inovasi Digital · Jakarta Selatan</p>
+            </div>
+          </div>
+          <div class="job-tags">
+            <span class="tag hybrid">Hybrid</span>
+            <span class="tag">React.js</span>
+            <span class="tag">Node.js</span>
+          </div>
+          <div class="job-card-footer">
+            <span class="salary-text">Rp 18–28 jt/bln</span>
+            <span class="time-text">2 hari lalu</span>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-card-main">
+            <div class="company-logo-box text-orange">📊</div>
+            <div class="job-card-details">
+              <h3>Data Scientist</h3>
+              <p class="company-name">DataTech Indonesia · Jakarta Pusat</p>
+            </div>
+          </div>
+          <div class="job-tags">
+            <span class="tag full-time">Full-time</span>
+            <span class="tag">Python</span>
+            <span class="tag">Machine Learning</span>
+          </div>
+          <div class="job-card-footer">
+            <span class="salary-text">Rp 15–22 jt/bln</span>
+            <span class="time-text">3 hari lalu</span>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-card-main">
+            <div class="company-logo-box text-purple">🚀</div>
+            <div class="job-card-details">
+              <h3>Product Manager</h3>
+              <p class="company-name">Unicorn.id · Jakarta</p>
+            </div>
+          </div>
+          <div class="job-tags">
+            <span class="tag hybrid">Hybrid</span>
+            <span class="tag">Product Strategy</span>
+            <span class="tag">Agile</span>
+          </div>
+          <div class="job-card-footer">
+            <span class="salary-text">Rp 20–35 jt/bln</span>
+            <span class="time-text">5 hari lalu</span>
+          </div>
+        </div>
+
+      </aside>
+
+      <section class="job-detail-column">
+        <div class="detail-sticky-container">
+          
+          <div class="detail-header-box">
+            <div class="company-logo-large">💻</div>
+            <h2 class="detail-title">Senior Full Stack Developer</h2>
+            <p class="detail-company">PT. Inovasi Digital</p>
+            
+            <div class="detail-meta-info">
+              <span><i class="fa-solid fa-location-dot"></i> Jakarta Selatan</span>
+              <span><i class="fa-solid fa-briefcase"></i> Hybrid</span>
+              <span><i class="fa-solid fa-users"></i> 47 pelamar</span>
+            </div>
+
+            <div class="detail-action-actions">
+              <button class="btn-apply">Lamar Sekarang</button>
+              <button class="btn-bookmark"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+          </div>
+
+          <div class="detail-salary-banner">
+            Rp 18–28 jt/bln
+          </div>
+
+        </div>
+      </section>
 
     </div>
-
-
-
-    <div class="modern-job-container">
-
-
-      <!-- CARD -->
-      <div class="modern-job-card">
-
-        <div class="modern-job-header">
-
-          <div class="job-icon">
-            💻
-          </div>
-
-          <div>
-            <h3>Senior Full Stack Developer</h3>
-            <p>PT. Inovasi Digital · Jakarta Selatan</p>
-          </div>
-
-        </div>
-
-
-        <div class="job-tags">
-
-          <span class="tag hybrid">Hybrid</span>
-          <span class="tag">React.js</span>
-          <span class="tag">Node.js</span>
-
-        </div>
-
-
-        <h2 class="salary">
-          Rp 18–28 jt/bln
-        </h2>
-
-
-        <div class="job-footer">
-
-          <span>2 hari lalu</span>
-
-          <button class="detail-btn">
-            Lihat Detail
-          </button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- CARD -->
-      <div class="modern-job-card">
-
-        <div class="modern-job-header">
-
-          <div class="job-icon">
-            🎨
-          </div>
-
-          <div>
-            <h3>UI/UX Designer</h3>
-            <p>Kreasi Studio · Bandung</p>
-          </div>
-
-        </div>
-
-
-        <div class="job-tags">
-
-          <span class="tag remote">Remote</span>
-          <span class="tag">Figma</span>
-          <span class="tag">Prototyping</span>
-
-        </div>
-
-
-        <h2 class="salary">
-          Rp 10–16 jt/bln
-        </h2>
-
-
-        <div class="job-footer">
-
-          <span>1 hari lalu</span>
-
-          <button class="detail-btn">
-            Lihat Detail
-          </button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- CARD -->
-      <div class="modern-job-card">
-
-        <div class="modern-job-header">
-
-          <div class="job-icon">
-            📊
-          </div>
-
-          <div>
-            <h3>Data Scientist</h3>
-            <p>DataTech Indonesia · Jakarta Pusat</p>
-          </div>
-
-        </div>
-
-
-        <div class="job-tags">
-
-          <span class="tag full">Full-time</span>
-          <span class="tag">Python</span>
-          <span class="tag">Machine Learning</span>
-
-        </div>
-
-
-        <h2 class="salary">
-          Rp 15–22 jt/bln
-        </h2>
-
-
-        <div class="job-footer">
-
-          <span>3 hari lalu</span>
-
-          <button class="detail-btn">
-            Lihat Detail
-          </button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- CARD -->
-      <div class="modern-job-card">
-
-        <div class="modern-job-header">
-
-          <div class="job-icon">
-            🚀
-          </div>
-
-          <div>
-            <h3>Product Manager</h3>
-            <p>Unicorn.id · Jakarta</p>
-          </div>
-
-        </div>
-
-
-        <div class="job-tags">
-
-          <span class="tag hybrid">Hybrid</span>
-          <span class="tag">Product Strategy</span>
-          <span class="tag">Agile</span>
-
-        </div>
-
-
-        <h2 class="salary">
-          Rp 20–35 jt/bln
-        </h2>
-
-
-        <div class="job-footer">
-
-          <span>5 hari lalu</span>
-
-          <button class="detail-btn">
-            Lihat Detail
-          </button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- CARD -->
-      <div class="modern-job-card">
-
-        <div class="modern-job-header">
-
-          <div class="job-icon">
-            🏦
-          </div>
-
-          <div>
-            <h3>Backend Engineer (Go)</h3>
-            <p>FinTech Maju · Remote</p>
-          </div>
-
-        </div>
-
-
-        <div class="job-tags">
-
-          <span class="tag remote">Remote</span>
-          <span class="tag">Golang</span>
-          <span class="tag">Microservices</span>
-
-        </div>
-
-
-        <h2 class="salary">
-          Rp 14–19 jt/bln
-        </h2>
-
-
-        <div class="job-footer">
-
-          <span>1 minggu lalu</span>
-
-          <button class="detail-btn">
-            Lihat Detail
-          </button>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- CARD -->
-      <div class="modern-job-card">
-
-        <div class="modern-job-header">
-
-          <div class="job-icon">
-            📢
-          </div>
-
-          <div>
-            <h3>Marketing Digital Manager</h3>
-            <p>Brand Kreatif · Surabaya</p>
-          </div>
-
-        </div>
-
-
-        <div class="job-tags">
-
-          <span class="tag full">Full-time</span>
-          <span class="tag">SEO/SEM</span>
-          <span class="tag">Social Media</span>
-
-        </div>
-
-
-        <h2 class="salary">
-          Rp 12–21 jt/bln
-        </h2>
-
-
-        <div class="job-footer">
-
-          <span>4 hari lalu</span>
-
-          <button class="detail-btn">
-            Lihat Detail
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
+  </main>
 
   <script src="js/script.js"></script>
-
 </body>
 </html>
