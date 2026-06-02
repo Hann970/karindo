@@ -1397,3 +1397,23 @@ body.karindo-bg {
   border: 2px solid #3b82f6;
   background-color: #f0f7ff;
 }
+/* --- GAYA TAMBAHAN JIKA LOKER TIDAK DITEMUKAN --- */
+.no-jobs-message {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+}
+
+.no-jobs-message i {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #94a3b8;
+}
+
+.no-jobs-message p {
+  font-size: 14px;
+  font-weight: 500;
+}

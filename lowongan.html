@@ -23,7 +23,7 @@
       <div class="search-bar-container">
         <div class="search-input-group">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <input type="text" placeholder="Posisi, skill, atau perusahaan...">
+          <input type="text" id="search-keyword" placeholder="Posisi, skill, atau perusahaan...">
         </div>
         
         <select id="filter-kota" class="search-select location-select">
@@ -33,19 +33,21 @@
           <option value="Surabaya">Surabaya</option>
         </select>
         
-        <select class="search-select">
-          <option>Semua Tipe</option>
-          <option>Full-time</option>
-          <option>Hybrid</option>
-          <option>Remote</option>
+        <select id="filter-tipe" class="search-select">
+          <option value="Semua">Semua Tipe</option>
+          <option value="Full-time">Full-time</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="Remote">Remote</option>
         </select>
-        <select class="search-select">
-          <option>Semua Kategori</option>
-          <option>Teknologi</option>
-          <option>Desain</option>
-          <option>Pemasaran</option>
+        
+        <select id="filter-kategori" class="search-select">
+          <option value="Semua">Semua Kategori</option>
+          <option value="Teknologi">Teknologi</option>
+          <option value="Desain">Desain</option>
+          <option value="Pemasaran">Pemasaran</option>
         </select>
-        <button class="btn-search">Cari</button>
+        
+        <button id="btn-cari" class="btn-search">Cari</button>
       </div>
     </header>
 
@@ -53,7 +55,7 @@
       
       <section class="job-list-sidebar" id="job-list">
         
-        <div class="modern-job-card active" data-city="Jakarta" data-id="1">
+        <div class="modern-job-card active" data-id="1" data-city="Jakarta" data-type="Hybrid" data-category="Teknologi">
           <div class="modern-job-header">
             <div class="job-icon-bg blue-bg">
               <i class="fa-solid fa-laptop-code"></i>
@@ -74,7 +76,7 @@
           </div>
         </div>
 
-        <div class="modern-job-card" data-city="Jakarta" data-id="2">
+        <div class="modern-job-card" data-id="2" data-city="Jakarta" data-type="Full-time" data-category="Teknologi">
           <div class="modern-job-header">
             <div class="job-icon-bg green-bg">
               <i class="fa-solid fa-chart-simple"></i>
@@ -95,7 +97,7 @@
           </div>
         </div>
 
-        <div class="modern-job-card" data-city="Bandung" data-id="3">
+        <div class="modern-job-card" data-id="3" data-city="Bandung" data-type="Remote" data-category="Desain">
           <div class="modern-job-header">
             <div class="job-icon-bg blue-bg">
               <i class="fa-solid fa-palette"></i>
@@ -116,7 +118,7 @@
           </div>
         </div>
 
-        <div class="modern-job-card" data-city="Surabaya" data-id="4">
+        <div class="modern-job-card" data-id="4" data-city="Surabaya" data-type="Full-time" data-category="Pemasaran">
           <div class="modern-job-header">
             <div class="job-icon-bg green-bg">
               <i class="fa-solid fa-bullhorn"></i>
@@ -135,6 +137,11 @@
             <span class="salary">Rp 12–21 jt/bln</span>
             <span class="posted-time">4 hari lalu</span>
           </div>
+        </div>
+
+        <div id="no-jobs-alert" class="no-jobs-message" style="display: none;">
+          <i class="fa-regular fa-folder-open"></i>
+          <p>Lowongan yang Anda cari tidak ditemukan.</p>
         </div>
 
       </section>
@@ -169,50 +176,25 @@
   </main>
 
   <script>
-    // 1. Data Dummy Mentah untuk Sinkronisasi Detail Panel Kanan
+    // 1. Data Detail Pekerjaan
     const jobsData = {
-      "1": {
-        title: "Senior Full Stack Developer",
-        company: "PT. Inovasi Digital",
-        location: "Jakarta Selatan",
-        type: "Hybrid",
-        applicants: "47 pelamar",
-        salary: "Rp 18–28 jt/bln",
-        icon: '<i class="fa-solid fa-laptop-code"></i>'
-      },
-      "2": {
-        title: "Data Scientist",
-        company: "DataTech Indonesia",
-        location: "Jakarta Pusat",
-        type: "Full-time",
-        applicants: "12 pelamar",
-        salary: "Rp 15–22 jt/bln",
-        icon: '<i class="fa-solid fa-chart-simple"></i>'
-      },
-      "3": {
-        title: "UI/UX Designer",
-        company: "Kreasi Studio",
-        location: "Bandung",
-        type: "Remote",
-        applicants: "29 pelamar",
-        salary: "Rp 10–16 jt/bln",
-        icon: '<i class="fa-solid fa-palette"></i>'
-      },
-      "4": {
-        title: "Digital Marketing Manager",
-        company: "Brand Kreatif",
-        location: "Surabaya",
-        type: "Full-time",
-        applicants: "8 pelamar",
-        salary: "Rp 12–21 jt/bln",
-        icon: '<i class="fa-solid fa-bullhorn"></i>'
-      }
+      "1": { title: "Senior Full Stack Developer", company: "PT. Inovasi Digital", location: "Jakarta Selatan", type: "Hybrid", applicants: "47 pelamar", salary: "Rp 18–28 jt/bln", icon: '<i class="fa-solid fa-laptop-code"></i>' },
+      "2": { title: "Data Scientist", company: "DataTech Indonesia", location: "Jakarta Pusat", type: "Full-time", applicants: "12 pelamar", salary: "Rp 15–22 jt/bln", icon: '<i class="fa-solid fa-chart-simple"></i>' },
+      "3": { title: "UI/UX Designer", company: "Kreasi Studio", location: "Bandung", type: "Remote", applicants: "29 pelamar", salary: "Rp 10–16 jt/bln", icon: '<i class="fa-solid fa-palette"></i>' },
+      "4": { title: "Digital Marketing Manager", company: "Brand Kreatif", location: "Surabaya", type: "Full-time", applicants: "8 pelamar", salary: "Rp 12–21 jt/bln", icon: '<i class="fa-solid fa-bullhorn"></i>' }
     };
 
-    // 2. DOM Elemen Selector
+    // 2. Selector Elemen
     const cards = document.querySelectorAll('.modern-job-card');
+    const inputKeyword = document.getElementById('search-keyword');
     const filterKota = document.getElementById('filter-kota');
-    
+    const filterTipe = document.getElementById('filter-tipe');
+    const filterKategori = document.getElementById('filter-kategori');
+    const btnCari = document.getElementById('btn-cari');
+    const noJobsAlert = document.getElementById('no-jobs-alert');
+    const detailPanel = document.getElementById('job-detail');
+
+    // Selector Panel Detail
     const detailIcon = document.getElementById('detail-icon');
     const detailTitle = document.getElementById('detail-title');
     const detailCompany = document.getElementById('detail-company');
@@ -221,10 +203,11 @@
     const detailApplicants = document.getElementById('detail-applicants');
     const detailSalary = document.getElementById('detail-salary');
 
-    // 3. Fungsi untuk Update Isi Detail Sebelah Kanan
+    // 3. Fungsi Memperbarui Panel Detail Kanan
     function updateDetailPanel(id) {
       const data = jobsData[id];
       if (data) {
+        detailPanel.style.display = "block";
         detailIcon.innerHTML = data.icon;
         detailTitle.textContent = data.title;
         detailCompany.textContent = data.company;
@@ -235,45 +218,73 @@
       }
     }
 
-    // 4. Event Listener untuk Klik pada Setiap Kartu Loker
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        // Hapus class 'active' dari kartu sebelumnya
-        document.querySelector('.modern-job-card.active')?.classList.remove('active');
-        
-        // Tambah class 'active' ke kartu yang sedang diklik
-        card.classList.add('active');
-        
-        // Ambil ID data dan perbarui panel kanan
-        const jobId = card.getAttribute('data-id');
-        updateDetailPanel(jobId);
-      });
-    });
+    // 4. Fungsi Utama Penyaringan (Kombinasi Semua Filter)
+    function filterJobs() {
+      const keyword = inputKeyword.value.toLowerCase().trim();
+      const selectedCity = filterKota.value;
+      const selectedType = filterTipe.value;
+      const selectedCategory = filterKategori.value;
 
-    // 5. Event Listener untuk Pemilihan Kota (Dropdown Filter)
-    filterKota.addEventListener('change', (e) => {
-      const selectedCity = e.target.value;
+      let visibleCardsCount = 0;
       let firstVisibleCard = null;
 
       cards.forEach(card => {
-        const cardCity = card.getAttribute('data-city');
+        const id = card.getAttribute('data-id');
+        const city = card.getAttribute('data-city');
+        const type = card.getAttribute('data-type');
+        const category = card.getAttribute('data-category');
         
-        // Jika pilih "Semua" atau kota cocok dengan data-city kartu
-        if (selectedCity === "Semua" || cardCity === selectedCity) {
-          card.style.display = "block"; // Tampilkan kartu
-          if (!firstVisibleCard) {
-            firstVisibleCard = card; // Ambil kartu pertama yang lolos filter
-          }
+        // Ambil data teks di dalam card untuk pencarian keyword
+        const cardTitle = jobsData[id].title.toLowerCase();
+        const cardCompany = jobsData[id].company.toLowerCase();
+
+        // Validasi Kondisi Match
+        const matchKeyword = keyword === "" || cardTitle.includes(keyword) || cardCompany.includes(keyword);
+        const matchCity = selectedCity === "Semua" || city === selectedCity;
+        const matchType = selectedType === "Semua" || type === selectedType;
+        const matchCategory = selectedCategory === "Semua" || category === selectedCategory;
+
+        // Jika semua filter terpenuhi
+        if (matchKeyword && matchCity && matchType && matchCategory) {
+          card.style.display = "block";
+          visibleCardsCount++;
+          if (!firstVisibleCard) firstVisibleCard = card;
         } else {
-          card.style.display = "none"; // Sembunyikan kartu
+          card.style.display = "none";
         }
       });
 
-      // Otomatis klik kartu pertama yang muncul hasil filter agar detail panel kanan langsung sinkron
-      if (firstVisibleCard) {
-        firstVisibleCard.click();
+      // Atur visibilitas pesan "Tidak Ditemukan" & Panel Detail
+      if (visibleCardsCount === 0) {
+        noJobsAlert.style.display = "block";
+        detailPanel.style.display = "none"; // Sembunyikan detail jika tidak ada data sama sekali
+      } else {
+        noJobsAlert.style.display = "none";
+        if (firstVisibleCard) {
+          firstVisibleCard.click(); // Klik kartu pertama otomatis
+        }
       }
+    }
+
+    // 5. Event Listener untuk Interaksi Klik Kartu
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelector('.modern-job-card.active')?.classList.remove('active');
+        card.classList.add('active');
+        updateDetailPanel(card.getAttribute('data-id'));
+      });
     });
+
+    // 6. Event Listener untuk Otomatis Memfilter Saat Pilihan Dropdown Berubah
+    filterKota.addEventListener('change', filterJobs);
+    filterTipe.addEventListener('change', filterJobs);
+    filterKategori.addEventListener('change', filterJobs);
+
+    // Filter langsung jalan ketika mengetik di kotak pencarian (Real-time)
+    inputKeyword.addEventListener('input', filterJobs);
+
+    // Tombol "Cari" sebagai pelengkap alternatif pemicu filter
+    btnCari.addEventListener('click', filterJobs);
   </script>
 </body>
 </html>
