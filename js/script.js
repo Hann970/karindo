@@ -10,11 +10,7 @@ document.querySelector("#menuu").onclick = () => {
 
 };
 
-
-
 // ... kode lama kamu ...
-
-
 
 // TAMBAHKAN DI SINI (DI BAWAH SENDIRI)
 
@@ -25,12 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 // Click di luar side bar unutk menghilangkan nav
 
 const menuu = document.querySelector("#menuu");
-
-
 
 document.addEventListener("click", function (e) {
 
@@ -42,23 +35,15 @@ document.addEventListener("click", function (e) {
 
 });
 
-
-
 const navbarLogo = document.querySelector(".navbar-logo");
-
-
 
 navbarLogo.onclick = (e) => {
 
   e.preventDefault(); // Mencegah pindah ke #
 
-
-
   // Feedback visual saat klik
 
   navbarLogo.style.transform = "scale(0.95)";
-
-
 
   setTimeout(() => {
 
@@ -68,15 +53,11 @@ navbarLogo.onclick = (e) => {
 
 };
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
   const counters = document.querySelectorAll(".counter");
 
   const speed = 100; // Semakin kecil angka, semakin cepat
-
-
 
   counters.forEach((counter) => {
 
@@ -87,8 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const count = +counter.innerText.replace(/,/g, "");
 
       const increment = target / speed;
-
-
 
       if (count < target) {
 
@@ -104,27 +83,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-
-
     animate(); // Jalankan fungsi animasi
 
   });
 
   feather.replace();
 
-
-
 const userData = JSON.parse(localStorage.getItem("loggedInUser"));
-
-
 
 if (userData) {
 
-
-
   const userIcon = document.getElementById("user");
-
-
 
   userIcon.innerHTML = `
 
@@ -140,48 +109,27 @@ if (userData) {
 
 const detailBtns = document.querySelectorAll(".detail-btn");
 
-
-
 detailBtns.forEach(btn => {
 
-
-
   btn.addEventListener("click", () => {
-
-
 
     const userData = JSON.parse(
 
       localStorage.getItem("loggedInUser")
 
     );
-
-
-
     if (!userData) {
-
-
 
       alert("Silakan login terlebih dahulu!");
 
-
-
       window.location.href = "login.html";
-
-
-
       return;
 
     }
 
-
-
     alert("Berhasil membuka detail lowongan!");
 
   });
-
-
-
 });
 
 });
@@ -192,8 +140,6 @@ const navbarNav = document.querySelector('.navbar-nav');
 
 const hamburger = document.querySelector('#menuu');
 
-
-
 hamburger.onclick = (e) => {
 
   navbarNav.classList.toggle('active');
@@ -201,8 +147,6 @@ hamburger.onclick = (e) => {
   e.stopPropagation();
 
 };
-
-
 
 // Klik di luar sidebar untuk menyembunyikan menu kembali
 
@@ -215,4 +159,3 @@ document.addEventListener('click', function (e) {
   }
 
 }); 
-

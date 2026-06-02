@@ -397,20 +397,6 @@ body {
   box-shadow: 0 10px 20px rgba(41, 42, 179, 0.3);
 }
 
-//* --- RESPONSIVE MOBILE BARU (GABUNGAN AMAN) --- */
-@media (max-width: 991px) {
-  /* Gaya Hero & Glass Container bawaanmu agar tetap normal */
-  .hero .content h1 {
-    font-size: 3rem;
-  }
-  .glass-container {
-    flex-direction: column;
-    padding: 40px 20px;
-  }
-  .info-left {
-    text-align: center;
-    margin-bottom: 30px;
-  }
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 991px) {
   .hero .content h1 {
