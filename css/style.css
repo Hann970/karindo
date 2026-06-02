@@ -784,53 +784,7 @@ body {
   }
 
 }
-/* ================= CV BUILDER ================= */
 
-.cv-container{
-    max-width:1200px;
-    margin:auto;
-    padding:8rem 7%;
-}
-
-.cv-layout{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:2rem;
-}
-
-.cv-form,
-.cv-preview{
-    background:white;
-    padding:2rem;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.cv-form input,
-.cv-form textarea{
-    width:100%;
-    padding:12px;
-    margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:10px;
-}
-
-.cv-form textarea{
-    min-height:120px;
-}
-
-.cv-preview h1{
-    color:#2563eb;
-    margin-bottom:10px;
-}
-
-.cv-preview h3{
-    margin-top:20px;
-}
-
-.cv-preview ul{
-    padding-left:20px;
-}
 /* ================= BLOG WAWANCARA ================= */
 
 .blog-container{
@@ -895,10 +849,224 @@ body {
     cursor:pointer;
 }
 .karindo-bg{
-  background:
-  linear-gradient(
-  135deg,
-  #eef4ff,
-  #f8f5ff
-  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("../img/header-bg.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 0 7%;
+}
+/* ========================= */
+/* CV BUILDER / ARTIKEL CV */
+/* ========================= */
+
+.cv-page{
+    min-height:100vh;
+    padding:8rem 7%;
+}
+
+.cv-hero{
+    text-align:center;
+    margin-bottom:4rem;
+}
+
+.cv-badge{
+    display:inline-block;
+    background:#facc15;
+    color:#111827;
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:600;
+    margin-bottom:1rem;
+}
+
+.cv-hero h1{
+    font-size:4rem;
+    color:#facc15;
+    margin-bottom:1rem;
+}
+
+.cv-hero p{
+    max-width:850px;
+    margin:auto;
+    color:#475569;
+    line-height:1.8;
+    font-size:1.1rem;
+}
+
+.cv-banner{
+    background:white;
+    padding:3rem;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    margin-bottom:3rem;
+}
+
+.cv-banner h2{
+    color:#2563eb;
+    margin-bottom:1rem;
+}
+
+.cv-banner p{
+    color:#475569;
+    line-height:1.8;
+}
+
+.tips-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+    margin-bottom:3rem;
+}
+
+.tip-card{
+    background:white;
+    padding:2rem;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.tip-card:hover{
+    transform:translateY(-10px);
+}
+
+.tip-card h3{
+    color:#2563eb;
+    margin-bottom:1rem;
+}
+
+.tip-card p{
+    color:#64748b;
+    line-height:1.7;
+}
+
+.article-section{
+    background:white;
+    padding:3rem;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:3rem;
+}
+
+.article-section h2{
+    color:#2563eb;
+    margin-bottom:1rem;
+}
+
+.article-section p{
+    color:#475569;
+    line-height:1.8;
+    margin-bottom:1rem;
+}
+
+.article-section ul{
+    padding-left:20px;
+}
+
+.article-section li{
+    margin-bottom:12px;
+    color:#475569;
+}
+
+.cv-example{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+    margin-bottom:3rem;
+}
+
+.good-cv,
+.bad-cv{
+    background:white;
+    padding:2rem;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.good-cv h3{
+    color:#16a34a;
+    margin-bottom:1rem;
+}
+
+.bad-cv h3{
+    color:#dc2626;
+    margin-bottom:1rem;
+}
+
+.good-cv ul,
+.bad-cv ul{
+    padding-left:20px;
+}
+
+.good-cv li,
+.bad-cv li{
+    margin-bottom:10px;
+    color:#475569;
+}
+
+.cv-cta{
+    background:white;
+    padding:4rem;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.cv-cta h2{
+    color:#facc15;
+    font-size:2.5rem;
+    margin-bottom:1rem;
+}
+
+.cv-cta p{
+    color:#64748b;
+    margin-bottom:2rem;
+    line-height:1.8;
+}
+
+.cta-btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.cta-btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .cv-hero h1{
+        font-size:2.5rem;
+    }
+
+    .cv-example{
+        grid-template-columns:1fr;
+    }
+
+    .cv-banner,
+    .article-section,
+    .cv-cta{
+        padding:2rem;
+    }
+
+}
+.blog-header h1,
+.article-header h1,
+.yellow-title{
+    color:#facc15;
 }
