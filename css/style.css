@@ -918,22 +918,46 @@ body {
     margin-bottom:3rem;
 }
 
-.good-cv,
-.good-cv *{
-    color:#334155;
+
+.good-cv{
+    background:#ffffff;
+    padding:2rem;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border-left:6px solid #16a34a;
 }
 
-.bad-cv,
-.bad-cv *{
-    color:#334155;
+.bad-cv{
+    background:#ffffff;
+    padding:2rem;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border-left:6px solid #dc2626;
 }
 
 .good-cv h3{
-    color:#16a34a !important;
+    color:#16a34a;
+    margin-bottom:1rem;
+    font-size:1.6rem;
 }
 
 .bad-cv h3{
-    color:#dc2626 !important;
+    color:#dc2626;
+    margin-bottom:1rem;
+    font-size:1.6rem;
+}
+
+.good-cv ul,
+.bad-cv ul{
+    padding-left:1.5rem;
+}
+
+.good-cv li,
+.bad-cv li{
+    color:#334155;
+    margin-bottom:10px;
+    line-height:1.7;
+    font-size:1rem;
 }
 
 .cv-cta{
