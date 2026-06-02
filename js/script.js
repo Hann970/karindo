@@ -92,3 +92,18 @@ detailBtns.forEach(btn => {
 
 });
 });
+// Toggle class active untuk hamburger menu
+const navbarNav = document.querySelector('.navbar-nav');
+const hamburger = document.querySelector('#menuu');
+
+hamburger.onclick = (e) => {
+  navbarNav.classList.toggle('active');
+  e.stopPropagation();
+};
+
+// Klik di luar sidebar untuk menyembunyikan menu kembali
+document.addEventListener('click', function (e) {
+  if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+    navbarNav.classList.remove('active');
+  }
+});

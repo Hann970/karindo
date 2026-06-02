@@ -1417,3 +1417,144 @@ body.karindo-bg {
   font-size: 14px;
   font-weight: 500;
 }
+/* --- BASE RESET FOR NAVBAR --- */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --- NAVBAR STYLING DESKTOP --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 7%;
+  background-color: rgba(6, 18, 56, 0.85); /* Biru gelap premium transparan */
+  backdrop-filter: blur(10px); /* Efek Glassmorphism */
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo img {
+  height: 35px;
+  width: auto;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-nav a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: 0.2s linear;
+  position: relative;
+}
+
+.navbar-nav a:hover {
+  color: #ffdd00; /* Aksen kuning cerah sesuai tema gambar */
+}
+
+/* Animasi underline tipis saat hover */
+.navbar-nav a::after {
+  content: '';
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ffdd00;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar-extra {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-extra a {
+  color: #ffffff;
+  transition: 0.2s;
+}
+
+.navbar-extra a:hover {
+  color: #ffdd00;
+}
+
+/* Sembunyikan tombol hamburger default di desktop */
+#menuu {
+  display: none;
+}
+
+
+/* --- RESPONSIVE MOBILE LOGIC (< 768px) --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 5%;
+  }
+
+  #menuu {
+    display: inline-block; /* Munculkan hamburger di HP */
+  }
+
+  /* Transformasikan Navigasi Tengah Menjadi Samping (Drawer Menu) */
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%; /* Sembunyikan di luar layar kanan */
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(6, 18, 56, 0.98); /* Solid & gelap agar kontras */
+    flex-direction: column;
+    gap: 0; /* Nol-kan gap agar pengaturan padding link presisi */
+    padding: 2rem 0;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  }
+
+  /* Kelas Aktif yang dipicu JavaScript saat hamburger ditekan */
+  .navbar-nav.active {
+    right: 0; /* Geser masuk ke layar */
+  }
+
+  .navbar-nav a {
+    color: #ffffff;
+    display: block;
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navbar-nav a::after {
+    display: none; /* Matikan animasi underline desktop di mobile */
+  }
+
+  .navbar-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding-left: 2.5rem; /* Efek bergeser sedikit ke kanan saat ditekan */
+  }
+}
