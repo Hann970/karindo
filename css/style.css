@@ -1070,3 +1070,352 @@ body {
     }
 
 }
+/* ==========================================================================
+   GAYA UTAMA HALAMAN LOWONGAN (Sesuai Gambar Layout Ideal)
+   ========================================================================== */
+
+/* Latar belakang halaman (Mencegah teks putih tenggelam) */
+body.karindo-bg {
+  background-color: #f1f5f9; /* Abu-abu terang premium agar kartu putih terlihat kontras */
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 5%;
+}
+
+/* --- HEADER & BAR PENCARIAN --- */
+.header-section {
+  margin-bottom: 2rem;
+  margin-top: 5rem; /* Memberi ruang agar tidak tertutup navbar utama fixed */
+}
+
+.main-title {
+  font-size: 2rem;
+  color: #061238; /* Biru gelap khas Karindo */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sub-title {
+  color: #64748b;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Container Pencarian Utama */
+.search-bar-container {
+  background: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+}
+
+.search-input-group {
+  position: relative;
+  flex: 2;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.search-input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f8fafc;
+  outline: none;
+}
+
+.search-select {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #334155;
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Dropdown kota aktif (Border biru seperti di gambar) */
+.search-select.location-select {
+  border: 2px solid #3b82f6;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.btn-search {
+  background-color: #061238;
+  color: #ffffff;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-search:hover {
+  background-color: #0f2954;
+}
+
+/* ==========================================================================
+   LAYOUT UTAMA: DUA KOLOM (KIRI: DAFTAR KARTU, KANAN: PANEL DETAIL)
+   ========================================================================== */
+.main-content-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr; /* Pembagian rasio kolom kiri dan kanan */
+  gap: 2rem;
+  align-items: start;
+}
+
+/* --- KOLOM KIRI: DAFTAR KARTU LOKER --- */
+.job-list-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modern-job-card {
+  background: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+/* Status aktif jika kartu dipilih (Border biru tebal seperti gambar 1) */
+.modern-job-card.active {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+}
+
+.modern-job-header {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+/* Wadah ikon perusahaan */
+.job-icon-bg {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.blue-bg { background-color: #e0f2fe; color: #0284c7; }
+.green-bg { background-color: #dcfce7; color: #16a34a; }
+
+.job-meta h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: #061238;
+  font-weight: 600;
+}
+
+.company-info {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Kapsul Tag (Hybrid, React, dll) */
+.job-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.job-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}
+
+.salary {
+  font-color: #2563eb;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2563eb;
+}
+
+.posted-time {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* --- KOLOM KANAN: PANEL DETAIL JELAS --- */
+.job-detail-panel {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  position: sticky;
+  top: 6rem; /* Menempel di layar saat di-scroll kebawah */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.detail-header {
+  margin-bottom: 25px;
+}
+
+.detail-icon-bg {
+  width: 64px;
+  height: 64px;
+  background-color: #e0f2fe;
+  color: #0284c7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.detail-title {
+  font-size: 24px;
+  color: #061238;
+  margin: 0 0 6px 0;
+  font-weight: 700;
+}
+
+.detail-company {
+  font-size: 16px;
+  color: #475569;
+  margin: 0 0 15px 0;
+}
+
+.detail-meta-info {
+  display: flex;
+  gap: 15px;
+  color: #64748b;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.detail-meta-info span i {
+  margin-right: 5px;
+}
+
+/* Baris Tombol Aksi */
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.btn-apply {
+  flex: 1;
+  background-color: #061238;
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.btn-apply:hover {
+  background-color: #0f2954;
+}
+
+.btn-bookmark {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  width: 48px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+
+.btn-bookmark:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+/* Box info Gaji Besar di Detail */
+.detail-salary-box {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+}
+
+.detail-salary-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2563eb;
+  margin: 0;
+}
+
+/* Notifikasi Loker Tidak Ditemukan */
+.no-jobs-message {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT (UNTUK HP / TABLET)
+   ========================================================================== */
+@media (max-width: 991px) {
+  .main-content-layout {
+    grid-template-columns: 1fr; /* Menjadi satu kolom bertumpuk di HP */
+  }
+  
+  .search-bar-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .job-detail-panel {
+    position: relative;
+    top: 0;
+  }
+}
